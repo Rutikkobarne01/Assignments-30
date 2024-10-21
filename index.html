@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Increment Decriment</title>
+    <style>
+        body{
+            background-color: #d1e0e0;
+            padding: 0px;
+
+        }
+        .heading{
+            text-align: center;
+        }
+         .card{
+            width:180px; 
+           background-color: #95b7b7;
+            border:2px solid black;
+            border-radius: 10px;
+            margin-left: 520px;
+            margin-top: 20px;
+            
+        }
+        .product-img{
+            height:100px;
+            display: block;
+            margin: 20px auto;
+            background-color: #95b7b7;
+        }
+        .prosuct-title{
+            margin: 0px;
+            padding: 0px;
+            text-align: center;
+        }
+        .product-price{
+            margin: 0px;
+            padding: 0px;
+            text-align: center; 
+            font-size: 25px;  
+            margin-top: 5px;
+            margin-bottom:8px;
+        }
+        .btn-buy-now{
+      background-color: #95b7b7;
+      color:white;
+      border: solid black 2px;
+      padding: 5px 20px;
+      margin: 10px auto;
+      display: block;
+      border-radius: 30px;
+      cursor: pointer;
+        }
+        .quantity-icon{
+            height: 20px;
+            margin: 0px 10px;
+            cursor:pointer
+
+        }
+        .quantity-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0px 10px;
+
+        }
+    </style>
+</head>
+<body>
+    <h1 class="heading">Increment and Decriment Card</h1>
+    <div class="card " id="card">
+    <img src="bike.png" class="product-img" />
+     <h2 class="prosuct-title">GT Bike - 650</h2>
+     <p class="product-price">Price:-4 lack</p>
+ 
+     <div class="quantity-container">
+
+        <img src="minus.png" class="quantity-icon" onclick="dec()"/>
+
+        <span id="quantity">1</span>
+
+        <img src="add.png" class="quantity-icon" onclick="inc()"/>
+     </div>
+
+     <button type="button " class="btn-buy-now" onclick="">Buy now</button>
+    </div>
+
+
+
+    <script>
+        const quantElement = document.getElementById('quantity');
+
+        function inc(){
+        let quantity = quantElement.innerText;
+        quantElement.innerText = ++quantity;
+        }
+
+        function dec(){
+            let quantity = quantElement.innerText;
+
+            if(quantity>1)
+            quantElement.innerText = --quantity;
+        }
+    </script>
+</body>
+</html>
